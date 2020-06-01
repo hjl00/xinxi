@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <script  src="jss/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap-table.css}">
+
+    <script src="jss/bootstrap3/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="jss/bootstrap3/css/bootstrap.css">
+    <script src="jss/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <link rel="stylesheet" href="jss/bootstrap-treeview/bootstrap-treeview.min.css">
+    <script src="jss/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+    <link rel="stylesheet" href="jss/bootStrap-addTabs/bootstrap.addtabs.css">
+
+    <link rel="stylesheet" href="jss/bootstrap-table/bootstrap-table.css">
+    <script src="jss/bootstrap-table/bootstrap-table.js"></script>
+    <script src="jss/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+
+
+    <!-- 引入bootstrap的css -->
+    <link  href="jss/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-treeview的css -->
+    <link  href="jss/treeview/bootstrap-treeview.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-addTabs的css -->
+    <link  href="jss/addTabs/addTabs.css" rel="stylesheet" >
+    <!-- 引入bootstrap-table的css -->
+    <link  href="jss/table/bootstrap-table.min.css" rel="stylesheet" >
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="jss/fileinput/css/fileinput.min.css" />
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="jss/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="jss/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="jss/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="jss/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="jss/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="jss/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+
+
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="jss/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="jss/fileinput/js/locales/zh.js"></script>
+    <script type="text/javascript" src="jss/fileinput/themes/fa/theme.js"></script>
+
+
+
+
+</head>
+<body>
+<div id="toolbar">
+    <form class="form-horizontal" id="from2">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">机构名称</label>
+            <div class="col-sm-3" >
+                <input type="text" class="form-control" id="name" name="name1"/>
+            </div>
+            <div class="col-sm-1">
+                <button type="button" onclick="search()" class="btn btn-info" data-toggle="collapse" >查询</button>
+            </div>
+            <span id="sp"></span>
+        </div>
+
+        <div id="demo" class="collapse">
+            <form id="" class="form-horizontal">
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">联系人</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="contacts">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">手机</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="phone">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">省份</label>
+                    <div class="col-sm-3">
+
+                        <select  class=" form-control" id="selectId1" onchange="queryArea1(this.value)" name="areaId">
+
+                        </select>
+
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">市名</label>
+                    <div class="col-sm-3">
+                        <select class=" form-control"  id="selectId2" name="areaId2"></select>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">经办人</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="handled">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">邮编</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="youbian">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">网站</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="eamin">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">机构级别</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="typeId4" name="typeId"></select>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <button type="button" onclick="addInfo()" class="btn btn-info glyphicon glyphicon-search">确认</button>
+                        <button type="button" onclick="addBook2()" class="btn btn-info glyphicon glyphicon-search">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form>
+</div>
+<div class="container">
+
+
+</div>
+
+<script type="text/javascript" >
+
+
+    /*加载类*/
+    $(function(){
+        initType();
+        queryArea3();
+
+    })
+
+
+    function addInfo(){
+     //alert($("#from2").serialize())
+        $.ajax({
+            url: "saveInfo",
+            type: "post",
+            //data: {name: $("#name1").val()},
+            data:$("#from2").serialize(),
+            dataType: "json",
+            success:function(data){
+            }
+        })
+        location.href=location;
+
+
+    }
+
+    /*function initArea(){
+        $("#sheng").combobox({
+            url: "${ctx}/queryArea.do?pcode=-1",
+            valueField: "areaCode",
+            textField: "areaName",
+            onChange: function(newValue, oldValue){
+                $("#shi").combobox({
+                    url: "${ctx}/queryArea.do?pcode=" + newValue,
+                    valueField: "areaCode",
+                    textField: "areaName",
+                    onChange: function(newValue, oldValue){
+                        $("#qu").combobox({
+                            url: "${ctx}/queryArea.do?pcode=" + newValue,
+                            valueField: "areaCode",
+                            textField: "areaName",
+                        })
+                    }
+                })
+            }
+        })
+    }*/
+
+    function search(){
+        $.ajax({
+            url: "selectList2",
+            type: "post",
+            data: {name: $("#name").val()},
+            dataType: "json",
+            success:function(data){
+                if (data>0){
+                    window.location.href="toInfoList";
+                    //location.href="toInfoUpdate";
+                    //alert(1)
+
+                }else{
+                    $("#sp").html("<input type='button' href='#demo' value='新增'class='btn btn-info' data-toggle='collapse'  onclick='updateState2()'>");
+                }
+            }
+        })
+    }
+
+    function initType(){
+        $.ajax({
+            url: "selectInfoType",
+            type: "post",
+            dataType: "json",
+            success:function(data){
+                var html = "<option>请选择</option>";
+                for(var i=0; i<data.length; i++){
+                    html += "<option value='"+data[i].code+"'>"+data[i].areaname+"</option>";
+                }
+                $("#typeId4").html(html);
+            }
+        })
+    }
+
+
+    //省
+    function queryArea3(){
+        $.ajax({
+            url: "queryArea3",
+            type: "post",
+            dataType: "json",
+            success:function(data){
+                //alert(data)
+                var html = "<option>请选择</option>";
+                for(var i=0; i<data.length; i++){
+                    html += "<option value='"+data[i].areaCode+"'>"+data[i].areaName+"</option>";
+                }
+                $("#selectId1").html(html);
+            }
+        })
+    }
+
+    //市
+    function queryArea1(pid){
+        $.ajax({
+            url: "queryArea",
+            data:{pid:pid},
+            type: "post",
+            dataType: "json",
+            success:function(data){
+                //alert(data)
+                var html = "<option>请选择</option>";
+                for(var i=0; i<data.length; i++){
+                    html += "<option value='"+data[i].areaCode+"'>"+data[i].areaName+"</option>";
+                }
+                    $("#selectId2").html(html);
+            }
+        })
+    }
+
+
+
+</script>
+</body>
+
+</html>

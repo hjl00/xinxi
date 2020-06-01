@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap-table.css}">
+    <script src="jss/jquery.min.js"></script>
+    <script src="jss/bootstrap3/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="jss/bootstrap3/css/bootstrap.css">
+    <script src="jss/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <link rel="stylesheet" href="jss/bootstrap-treeview/bootstrap-treeview.min.css">
+    <script src="jss/bootStrap-addTabs/bootstrap.addtabs.js"></script>
+    <link rel="stylesheet" href="jss/bootStrap-addTabs/bootstrap.addtabs.css">
+
+    <link rel="stylesheet" href="jss/bootstrap-table/bootstrap-table.css">
+    <script src="jss/bootstrap-table/bootstrap-table.js"></script>
+    <script src="jss/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <!-- 引入jquery -->
+    <script type="text/javascript" src="jss/jquery.min.js"></script>
+    <!-- 引入bootstrap的css -->
+    <link  href="jss/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-treeview的css -->
+    <link  href="jss/treeview/bootstrap-treeview.min.css" rel="stylesheet" >
+    <!-- 引入bootstrap-addTabs的css -->
+    <link  href="jss/addTabs/addTabs.css" rel="stylesheet" >
+    <!-- 引入bootstrap-table的css -->
+    <link  href="jss/table/bootstrap-table.min.css" rel="stylesheet" >
+    <!-- 引入fileinput的css -->
+    <link type="text/css" rel="stylesheet" href="jss/fileinput/css/fileinput.min.css" />
+    <!-- 引入my97 -->
+    <script type="text/javascript" src="jss/my97/WdatePicker.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="jss/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="jss/treeview/bootstrap-treeview.min.js"></script>
+    <!-- 引入bootstrap的js-->
+    <script type="text/javascript" src="jss/addTabs/addTabs.js"></script>
+    <!-- 引入bootstrap-table的js-->
+    <script type="text/javascript" src="jss/table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="jss/table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- 引入bootbox.js -->
+    <script type="text/javascript" src="js/bootbox/bootbox.js"></script>
+    <!-- 引入fileinput的js -->
+    <script type="text/javascript" src="jss/fileinput/js/fileinput.min.js"></script>
+    <!--  引入fileinput的js -->
+    <script type="text/javascript" src="jss/fileinput/js/locales/zh.js"></script>
+    <script type="text/javascript" src="jss/fileinput/themes/fa/theme.js"></script>
+
+
+
+
+</head>
+<body>
+<div id="toolbar">
+    <form class="form-inline">
+        <div class="form-group">
+
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-info " id="bookName"/>新增机构
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-info" id=""/>联系人
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-8">
+                <input type="button" class="form-control" id="allTypeId1"/>名字
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">机构名称</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <select class="form-control" id="allTypeId" ></select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <button type="button" onclick="search()" class="btn btn-info glyphicon glyphicon-search">查询</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<table id="datatable" class="table table-hover"></table>
+
+<script type="text/javascript" th:inline="none">
+
+    $(function(){
+        initTable();
+    })
+    function initTable(){
+        $("#datatable").bootstrapTable({
+            toolbar:'#toolbar',
+            url: "selectList",
+            pagination:true, //是否展示分页
+            pageList:[3,5],//分页组件
+            pageNumber:1,
+            pageSize:3,//默认每页条数
+            showColumns:false,//是否显示 内容列下拉框
+            showToggle:false,//是否显示 切换试图（table/card）按钮
+            showPaginationSwitch:false,//是否显示 数据条数选择框
+            showRefresh:false,//是否显示刷新按钮
+            detailView:false,//设置为 true 可以显示详细页面模式。
+            showFooter:false,//是否显示列脚
+            clickToSelect: true, //是否启用点击选中行
+            sidePagination:'server',//分页方式：client客户端分页，server服务端分页（*
+            queryParams:function(){
+                return {
+                    page:this.pageNumber,
+                    rows:this.pageSize,
+
+                    name:$("#name").val(),
+
+
+                };
+            },
+            columns:[[
+                {field:'id',title:'编号'},
+                {field:'name1', title: '机构名称'},
+                {field:'jigoujibie', title: '机构级别'},
+                {field:'sheng', title: '省份/市'},
+                {field:'handled', title: '经办人'},
+                {field:'contacts', title: '联系人'},
+                {field:'auditStatus', title: '审核状态',
+                    formatter: function(value,row,index){
+                        return value==1?"已审核":"未审核";
+                    }},
+                {field:'cz', title: '操作',
+                    formatter: function(value,row,index){
+                        return "<a href='javaScript:bianjiInfo("+row.id+")'>编辑</a>|" +
+                               "<a href='javaScript:delInfo("+row.id+")'>删除</a>|" +
+                               "<a href='javaScript:selectInfo("+row.id+")'>查看</a>";
+                    }
+                }
+            ]]
+        })
+    }
+    function delInfo(id){
+        alert(id)
+        $.ajax({
+            url: "deleteInfo",
+            type: "post",
+            data:{id:id},
+            dataType: "json",
+            success:function(data){
+
+            }
+        })
+    }
+
+
+    function search(){
+                $("#datatable").bootstrapTable("refresh")
+    }
+</script>
+</body>
+</html>
