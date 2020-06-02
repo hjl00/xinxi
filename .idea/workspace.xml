@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ded2c20-2906-4cf5-831c-20a6afe6a922" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,15 +25,15 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,11 +134,21 @@
               <item name="springboot-information" type="b2602c69:ProjectViewProjectNode" />
               <item name="springboot-information" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="springboot-information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-information" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-information" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-information" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -252,12 +264,13 @@
       <workItem from="1590971639776" duration="3870000" />
       <workItem from="1590981839831" duration="279000" />
       <workItem from="1590994099818" duration="62000" />
-      <workItem from="1591014520810" duration="1623000" />
+      <workItem from="1591014520810" duration="2034000" />
+      <workItem from="1591067893763" duration="527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135538000" />
+    <option name="totallyTimeSpent" value="136476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -278,7 +291,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.2219973" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.22537112" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.7021898" />
@@ -286,7 +299,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.53138685" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.53138685" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006748" side_tool="true" weight="0.7021898" />
@@ -327,7 +340,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eureka/pom.xml" />
     <entry file="file://$PROJECT_DIR$/eureka/src/main/resources/application.yml" />
     <entry file="file://$PROJECT_DIR$/eureka/src/main/java/com/hjl/EurekaApplication.java" />
     <entry file="file://$PROJECT_DIR$/eureka-1/src/main/resources/application.yml">
@@ -632,6 +644,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/hjl/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
